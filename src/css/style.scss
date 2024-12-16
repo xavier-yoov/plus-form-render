@@ -1,0 +1,19 @@
+form.yoov-plus-create-form {
+  & > div{
+    margin-bottom: 10px;
+    & > label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    & > small {
+      display: block;
+      color: gray;
+    }
+
+    & > select,
+    & > input {
+     width: 100%;
+    }
+  }
+}

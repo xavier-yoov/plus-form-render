@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="dist/index.js"></script>
+    <link rel="stylesheet" href="dist/css/style.min.css">
+
+    <title>Document</title>
+
+
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding:35px;
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+    const app_key = "263e8e054bda40edb3c54262085f881f"
+    const app_sign = "OTMyZjEzNzNjNTZhZGVmODAxNTM1YzZjYTIyOGViYTc0OTk3ODNiMmMzOTNlMWM1YzlhMTgzM2U1OGVjYzliOQ=="
+    const worksheet_id = "67515579506be661f3531afc"
+
+</script>
+
+<script>
+
+    const instance = new YoovPlusFormRender({
+        app_key,
+        app_sign
+    });
+
+    instance.renderCreateFrom('container',worksheet_id)
+</script>
+
+</body>
+</html>
