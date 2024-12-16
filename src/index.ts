@@ -23,6 +23,8 @@ class YoovPlusFormRender{
     private headers:YOOVPlusHeaders | YOOVPlusGatewayHeaders
 
     constructor(private readonly credentials: YoovPlusCredentials | YoovPlusGatewayApiKey) {
+
+        console.log(credentials)
         if (this.credentials.hasOwnProperty("app_key") && this.credentials.hasOwnProperty("app_sign") ){
             this.credentials = credentials as YoovPlusCredentials
             this.host = "https://api.yoov.plus/worksheet/api/v1/open"
@@ -32,8 +34,10 @@ class YoovPlusFormRender{
                 "X-APP-SIGN": this.credentials.app_sign,
             }
         } else if (credentials.hasOwnProperty("api_key")) {
+
+            console.log("correct")
             this.credentials = credentials as YoovPlusGatewayApiKey
-            this.host = "https://k9iclgpdu6.execute-api.ap-east-1.amazonaws.com/default/yoovPlusSecurityGuard"
+            this.host = "https://xsv5hhtu5fac56aev3vb3mcvw40icuzq.lambda-url.ap-east-1.on.aws"
             this.headers = {
                 "Content-Type": "application/json",
                 "x-api-key": this.credentials.api_key,
@@ -479,10 +483,6 @@ class YoovPlusFormRender{
     }
 
     renderCreateFrom(containerId:string, worksheetId:string) {
-
-        // const app_key = "263e8e054bda40edb3c54262085f881f"
-        // const app_sign = "OTMyZjEzNzNjNTZhZGVmODAxNTM1YzZjYTIyOGViYTc0OTk3ODNiMmMzOTNlMWM1YzlhMTgzM2U1OGVjYzliOQ=="
-        // const worksheet_id = "67515579506be661f3531afc"
 
         const container = document.getElementById(containerId)
 

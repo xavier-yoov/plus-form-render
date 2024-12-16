@@ -7,6 +7,7 @@
     var YoovPlusFormRender = /** @class */ (function () {
         function YoovPlusFormRender(credentials) {
             this.credentials = credentials;
+            console.log(credentials);
             if (this.credentials.hasOwnProperty("app_key") && this.credentials.hasOwnProperty("app_sign")) {
                 this.credentials = credentials;
                 this.host = "https://api.yoov.plus/worksheet/api/v1/open";
@@ -17,11 +18,12 @@
                 };
             }
             else if (credentials.hasOwnProperty("api_key")) {
+                console.log("correct");
                 this.credentials = credentials;
-                this.host = "https://api.yoov.plus/worksheet/api/v1/open";
+                this.host = "https://xsv5hhtu5fac56aev3vb3mcvw40icuzq.lambda-url.ap-east-1.on.aws";
                 this.headers = {
                     "Content-Type": "application/json",
-                    "X-API-KEY": this.credentials.api_key,
+                    "x-api-key": this.credentials.api_key,
                 };
             }
             else {
@@ -401,9 +403,6 @@
             return form;
         };
         YoovPlusFormRender.prototype.renderCreateFrom = function (containerId, worksheetId) {
-            // const app_key = "263e8e054bda40edb3c54262085f881f"
-            // const app_sign = "OTMyZjEzNzNjNTZhZGVmODAxNTM1YzZjYTIyOGViYTc0OTk3ODNiMmMzOTNlMWM1YzlhMTgzM2U1OGVjYzliOQ=="
-            // const worksheet_id = "67515579506be661f3531afc"
             var _this = this;
             var container = document.getElementById(containerId);
             if (container) {

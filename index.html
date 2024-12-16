@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xavier-yoov/plus-form-render@v1.0.0/dist/css/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xavier-yoov/plus-form-render@v1.0.1/dist/css/style.min.css">
     <title>Document</title>
     <style>
         #container{
@@ -22,8 +22,12 @@
 
 <div id="container"></div>
 
-<script src="https://cdn.jsdelivr.net/gh/xavier-yoov/plus-form-render@v1.0.0/dist/index.js"></script>
+<script src="dist/index.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/gh/xavier-yoov/plus-form-render@v1.0.1/dist/index.js"></script>-->
 <script>
+    const api_key = "BFUy2tVIwVzUAizaZYqgATNHBRbMaUom"
+
+
     const app_key = "263e8e054bda40edb3c54262085f881f"
     const app_sign = "OTMyZjEzNzNjNTZhZGVmODAxNTM1YzZjYTIyOGViYTc0OTk3ODNiMmMzOTNlMWM1YzlhMTgzM2U1OGVjYzliOQ=="
     const worksheet_id = "67515579506be661f3531afc"
@@ -32,8 +36,9 @@
 <script>
 
     const instance = new YoovPlusFormRender({
-        app_key,
-        app_sign
+        api_key,
+        // app_key,
+        // app_sign,
     });
 
     instance.renderCreateFrom('container',worksheet_id)

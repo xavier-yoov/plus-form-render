@@ -13,7 +13,7 @@ export type YOOVPlusHeaders = {
 };
 export type YOOVPlusGatewayHeaders = {
     "Content-Type": "application/json";
-    "X-API-KEY": string;
+    "x-api-key": string;
 };
 export type Component = any;
 declare class YoovPlusFormRender {
