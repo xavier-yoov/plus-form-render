@@ -14,7 +14,7 @@ export type YOOVPlusHeaders = {
 }
 export type YOOVPlusGatewayHeaders = {
     "Content-Type": "application/json",
-    "X-API-KEY": string,
+    "x-api-key": string,
 }
 export type Component = any
 
@@ -33,10 +33,10 @@ class YoovPlusFormRender{
             }
         } else if (credentials.hasOwnProperty("api_key")) {
             this.credentials = credentials as YoovPlusGatewayApiKey
-            this.host = "https://api.yoov.plus/worksheet/api/v1/open"
+            this.host = "https://k9iclgpdu6.execute-api.ap-east-1.amazonaws.com/default/yoovPlusSecurityGuard"
             this.headers = {
                 "Content-Type": "application/json",
-                "X-API-KEY": this.credentials.api_key,
+                "x-api-key": this.credentials.api_key,
             }
         } else {
             throw new Error("Invalid credentials")
